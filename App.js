@@ -1,6 +1,8 @@
-import { StyleSheet, Text, SafeAreaView, Pressable } from "react-native";
+import { StyleSheet, Text, SafeAreaView, Pressable, Modal } from "react-native";
+import React, { useState } from "react";
 
 export default function App() {
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.titulo}>
@@ -8,9 +10,15 @@ export default function App() {
         <Text style={styles.tituloBold}>Veterinaria ITUJ</Text>
       </Text>
 
-      <Pressable style={styles.btnNuevaCita}>
+      <Pressable
+        style={styles.btnNuevaCita}
+        onPress={() => setModalVisible(true)}
+      >
         <Text style={styles.btnTextNuevaCita}>Nueva Cita</Text>
       </Pressable>
+      <Modal animationType="slide" visible={modalVisible}>
+        <Text>Desde el modal</Text>
+      </Modal>
     </SafeAreaView>
   );
 }
@@ -27,7 +35,7 @@ const styles = StyleSheet.create({
     color: "#6028D9",
   },
   container: {
-    backgroundColor: "#f3f4f6",
+    backgroundColor: "#345sdf",
     flex: 1,
   },
   btnNuevaCita: {
