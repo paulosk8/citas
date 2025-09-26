@@ -1,8 +1,6 @@
 import { StyleSheet, Text, SafeAreaView, Pressable } from "react-native";
-import Formulario from "./src/components/Formulario";
 
 export default function App() {
-  
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.titulo}>
@@ -10,15 +8,9 @@ export default function App() {
         <Text style={styles.tituloBold}>Veterinaria ITUJ</Text>
       </Text>
 
-      <Pressable
-        style={styles.btnNuevaCita}
-        onPress={() => {
-          setModalVisible(true);
-        }}
-      >
+      <Pressable style={styles.btnNuevaCita}>
         <Text style={styles.btnTextNuevaCita}>Nueva Cita</Text>
       </Pressable>
-      <Formulario />
     </SafeAreaView>
   );
 }
@@ -52,9 +44,3 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 });
-
-{
-  /* <button onclick="descargarCitas()">Descargar citas</button>
-
-<Button onClick={descargarCitas()}>Descargar citas</Button> */
-}
